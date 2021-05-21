@@ -1,0 +1,28 @@
+* Gate controller
+
+Open my gate and garage using an ESP8266 connected to an old IR remote controller.
+The web server is exposed on the internet using YDNS, the IP is kept up to date by the ESP8266 itself.
+
+** Newlines stripping in the HTML
+
+To put the HTML source in the [[src/HTML.h][C code]] as string it's convenient to strip the ~\n~ characters.
+
+#+begin_src shell
+cat index.html | tr -d '\n'
+#+end_src
+
+** Secrets
+
+The file [[src/Secrets.h]] is needed.
+
+#+begin_src shell
+#define WIFI_ESSID ""
+#define WIFI_PASSWORD ""
+
+#define HTTP_USER ""
+#define HTTP_PASSWORD ""
+
+#define YDNS_USER ""
+#define YDNS_PASSWORD ""
+#define YDNS_HOST ""
+#+end_src
